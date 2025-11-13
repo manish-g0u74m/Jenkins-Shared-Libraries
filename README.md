@@ -11,6 +11,7 @@ A Jenkins shared library must include a **`vars/`** directory.
 Each file inside `vars/` represents a global function that Jenkins can automatically recognize and use inside a pipeline.
 
 Example structure of this repository:
+
     Jenkins-Shared-Libraries/
               └── vars/
               |      ├── dockerBuild.groovy
@@ -56,6 +57,8 @@ Each `.groovy` file defines a `call()` method — the main entry point Jenkins u
 2. We can now directly call any shared function.
    For example:
    ```bash
+   @Library('Shared') _  
+
    pipeline {
     agent any
     stages {
